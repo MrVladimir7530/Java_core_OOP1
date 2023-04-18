@@ -1,13 +1,19 @@
 package org.example;
 
-public class Hogwarts {
+public abstract class Hogwarts {
     private String firstName;
     private String secondName;
+    private int powerMagic;
 
-    public Hogwarts(String firstName, String secondName) {
+    public Hogwarts(String firstName, String secondName, int powerMagic) {
         this.firstName = firstName;
         this.secondName = secondName;
+        this.powerMagic = powerMagic;
     }
+    protected int powerMagic(){
+        return 0;
+    }
+
 
     public String getFirstName() {
         return firstName;

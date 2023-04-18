@@ -7,29 +7,27 @@ public class Gryffindor extends Hogwarts {
     private int bravery;
 
     public Gryffindor(String firstName, String secondName, int nobility, int honor, int bravery) {
-        super(firstName, secondName);
+        super(firstName, secondName, honor + nobility + bravery);
         this.nobility = nobility;
         this.honor = honor;
         this.bravery = bravery;
     }
 
-    public Gryffindor(Hogwarts person, int nobility, int honor, int bravery) {
-        super(person.getFirstName(), person.getSecondName());
-        this.nobility = nobility;
-        this.honor = honor;
-        this.bravery = bravery;
+    public int powerMagic() {
+        return nobility + honor + bravery;
+
     }
 
-    public void BetterStudent(Gryffindor person2) {
-        int sumPerson1 = nobility + honor + bravery;
-        int sumPerson2 = person2.nobility + person2.honor + person2.bravery;
+
+    public void betterStudent(Hogwarts person2) {
+        int sumPerson1 = powerMagic();
+        int sumPerson2 = person2.powerMagic();
         if (sumPerson1 > sumPerson2) {
             System.out.println(getFirstName() + " Лучшее, чем " + person2.getFirstName());
-        } else if(sumPerson1 < sumPerson2) {
+        } else if (sumPerson1 < sumPerson2) {
             System.out.println(person2.getFirstName() + " Лучшее, чем " + getFirstName());
-        }
-        else {
-            System.out.println(getFirstName() + " и "+ person2.getFirstName() + " равны");
+        } else {
+            System.out.println(getFirstName() + " и " + person2.getFirstName() + " равны");
         }
 
     }
@@ -38,6 +36,7 @@ public class Gryffindor extends Hogwarts {
     public String toString() {
         return "faculty: Gryffindor {" +
                 super.toString() +
+                ", powerMagic=" + powerMagic() +
                 ", nobility=" + nobility +
                 ", honor=" + honor +
                 ", bravery=" + bravery +
