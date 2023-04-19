@@ -4,12 +4,14 @@ public class Hufflepuff extends Hogwarts {
     private int industrious;
     private int loyal;
     private int honest;
+    private int transgression;
 
-    public Hufflepuff(String firstName, String secondName, int industrious, int loyal, int honest) {
-        super(firstName, secondName, industrious + loyal + honest);
+    public Hufflepuff(String firstName, String secondName, int industrious, int loyal, int honest, int transgression) {
+        super(firstName, secondName, industrious + loyal + honest, transgression);
         this.industrious = industrious;
         this.loyal = loyal;
         this.honest = honest;
+        this.transgression = transgression;
     }
 
     public int powerMagic() {
@@ -17,12 +19,22 @@ public class Hufflepuff extends Hogwarts {
     }
 
 
-    public void betterStudent(Hogwarts person2) {
+    public void betterStudent(Hufflepuff person2) {
         int sumPerson1 = powerMagic();
         int sumPerson2 = person2.powerMagic();
         if (sumPerson1 > sumPerson2) {
             System.out.println(getFirstName() + " Лучшее, чем " + person2.getFirstName());
         } else if (sumPerson1 < sumPerson2) {
+            System.out.println(person2.getFirstName() + " Лучшее, чем " + getFirstName());
+        } else {
+            System.out.println(getFirstName() + " и " + person2.getFirstName() + " равны");
+        }
+    }
+
+    public void betterStudentInHogwarts(Hogwarts person2) {
+        if (transgression > person2.getTransgression()) {
+            System.out.println(getFirstName() + " Лучшее, чем " + person2.getFirstName());
+        } else if (transgression < person2.getTransgression()) {
             System.out.println(person2.getFirstName() + " Лучшее, чем " + getFirstName());
         } else {
             System.out.println(getFirstName() + " и " + person2.getFirstName() + " равны");

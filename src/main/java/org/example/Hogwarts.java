@@ -4,16 +4,23 @@ public abstract class Hogwarts {
     private String firstName;
     private String secondName;
     private int powerMagic;
+    private int transgression;
 
-    public Hogwarts(String firstName, String secondName, int powerMagic) {
+    public Hogwarts(String firstName, String secondName, int powerMagic, int transgression) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.powerMagic = powerMagic;
-    }
-    protected int powerMagic(){
-        return 0;
+        this.transgression = transgression;
     }
 
+
+    public int getPowerMagic() {
+        return powerMagic;
+    }
+
+    public int getTransgression() {
+        return transgression;
+    }
 
     public String getFirstName() {
         return firstName;

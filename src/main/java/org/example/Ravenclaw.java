@@ -5,13 +5,15 @@ public class Ravenclaw extends Hogwarts {
     private int wise;
     private int witty;
     private int creative;
+    private int transgression;
 
-    public Ravenclaw(String firstName, String secondName, int clever, int wise, int witty, int creative) {
-        super(firstName, secondName, clever + wise + witty + creative);
+    public Ravenclaw(String firstName, String secondName, int clever, int wise, int witty, int creative, int transgression) {
+        super(firstName, secondName, clever + wise + witty + creative, transgression);
         this.clever = clever;
         this.wise = wise;
         this.witty = witty;
         this.creative = creative;
+        this.transgression = transgression;
     }
 
     public int powerMagic() {
@@ -19,12 +21,22 @@ public class Ravenclaw extends Hogwarts {
     }
 
 
-    public void betterStudent(Hogwarts person2) {
+    public void betterStudent(Ravenclaw person2) {
         int sumPerson1 = powerMagic();
         int sumPerson2 = person2.powerMagic();
         if (sumPerson1 > sumPerson2) {
             System.out.println(getFirstName() + " Лучшее, чем " + person2.getFirstName());
         } else if (sumPerson1 < sumPerson2) {
+            System.out.println(person2.getFirstName() + " Лучшее, чем " + getFirstName());
+        } else {
+            System.out.println(getFirstName() + " и " + person2.getFirstName() + " равны");
+        }
+    }
+
+    public void betterStudentInHogwarts(Hogwarts person2) {
+        if (transgression > person2.getTransgression()) {
+            System.out.println(getFirstName() + " Лучшее, чем " + person2.getFirstName());
+        } else if (transgression < person2.getTransgression()) {
             System.out.println(person2.getFirstName() + " Лучшее, чем " + getFirstName());
         } else {
             System.out.println(getFirstName() + " и " + person2.getFirstName() + " равны");
