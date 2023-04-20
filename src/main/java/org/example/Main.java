@@ -21,6 +21,6 @@ public class Main {
         studentHogwarts.printStudent();
 
         ron.betterStudent(hermione);
-        ron.betterStudentInHogwarts(draco);
+        hermione.betterStudentInHogwarts(draco);
     }
 }

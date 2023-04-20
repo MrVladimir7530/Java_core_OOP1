@@ -4,7 +4,7 @@ public abstract class Hogwarts {
     private String firstName;
     private String secondName;
     private int powerMagic;
-    private int transgression;
+    protected int transgression;
 
     public Hogwarts(String firstName, String secondName, int powerMagic, int transgression) {
         this.firstName = firstName;
@@ -12,7 +12,6 @@ public abstract class Hogwarts {
         this.powerMagic = powerMagic;
         this.transgression = transgression;
     }
-
 
     public int getPowerMagic() {
         return powerMagic;

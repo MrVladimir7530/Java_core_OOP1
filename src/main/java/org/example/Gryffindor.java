@@ -5,14 +5,12 @@ public class Gryffindor extends Hogwarts {
     private int nobility;
     private int honor;
     private int bravery;
-    private int transgression;
 
     public Gryffindor(String firstName, String secondName, int nobility, int honor, int bravery, int transgression) {
         super(firstName, secondName, honor + nobility + bravery, transgression);
         this.nobility = nobility;
         this.honor = honor;
         this.bravery = bravery;
-        this.transgression = transgression;
     }
 
     public int powerMagic() {
